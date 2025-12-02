@@ -69,6 +69,26 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
                 return 1; // swallow original
             }
         }
+        /*
+        if (locked && (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN)) {
+            if (targetWindow) {
+
+                // Send key directly to the target window WITHOUT switching focus
+                PostMessage(targetWindow, WM_KEYDOWN, kbd->vkCode, 0);
+
+                // swallow original key
+                return 1;
+            }
+        }
+
+        if (locked && (wParam == WM_KEYUP || wParam == WM_SYSKEYUP)) {
+            if (targetWindow) {
+                PostMessage(targetWindow, WM_KEYUP, kbd->vkCode, 0);
+                return 1;
+            }
+        }
+        */
+
     }
 
     return CallNextHookEx(NULL, nCode, wParam, lParam);
