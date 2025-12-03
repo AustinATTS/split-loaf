@@ -9,7 +9,7 @@ Overview
 --------
 
 Split Loaf is a Windows utility designed to reroute keyboard input to a specific target window. Once a target window is chosen, the keyboard can be “locked” to that window, so that all typed keys are sent directly to it regardless of which window is currently focused. This is useful for scenarios where you want input to always go to a particular application without manually switching focus.
-For example if you'd like to keep browsing through Google while still typing in a text editor without the need to switch windows.
+For example if you'd like to keep browsing through Google while still typing in a text editor without the need to move your mouse around.
 
 Features
 --------
@@ -20,17 +20,13 @@ Features
 
 *   **Unlock Keyboard**: Press **F7** to release the lock and restore normal keyboard behaviour.
 
-*   **Direct Input Injection**: Keys are sent directly to the target window without switching focus, preventing focus-thrashing.
+*   **Direct Input Injection**: Keys are sent directly to the target window automatically.
 
 
 Current Development Status
 --------------------------
 
 Split Loaf is still under active development. The current version works but has a few known limitations:
-
-*   It is weirdly slow and gives double inputs or can miss inputs.
-
-*   Modifier keys (Shift, Ctrl, Alt) may not always combine correctly with letter or symbol keys.
 
 *   Non-standard input (like Unicode or multi-character inputs) may not be fully supported.
 
@@ -51,12 +47,10 @@ How It Works
 4.  Press **F7** to unlock the keyboard and return to normal input behaviour.
 
 
-Internally, the program uses a **low-level keyboard hook** and posts messages directly to the target window. It ignores injected keystrokes to prevent double typing and aims to minimize focus conflicts.
+Internally, the program uses a **low-level keyboard hook** and sends messages directly to the target window. It ignores key up so modifier keys can still be used.
 
 Future Improvements
 -------------------
-
-*   Full modifier key support (Shift, Ctrl, Alt).
 
 *   Unicode and symbol input handling.
 
