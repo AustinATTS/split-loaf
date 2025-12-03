@@ -14,7 +14,7 @@ void InitTrayIcon(HWND hwnd) {
     nid.uCallbackMessage = WM_USER + 1;
 
     // Load a custom icon from resource (IDI_MYICON)
-    HICON hIcon = (HICON)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_APP_ICON), IMAGE_ICON,GetSystemMetrics(SM_CYICON),GetSystemMetrics(SM_CXICON),LR_DEFAULTCOLOR);
+    HICON hIcon = (HICON)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_APP_ICON), IMAGE_ICON,GetSystemMetrics(SM_CXICON),GetSystemMetrics(SM_CYICON),LR_DEFAULTCOLOR);
     strcpy_s(nid.szTip, "Split Loaf - Idle");
     nid.hIcon = hIcon;
     Shell_NotifyIcon(NIM_ADD, &nid);
