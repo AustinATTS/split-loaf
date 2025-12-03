@@ -1,6 +1,15 @@
 cmake_minimum_required(VERSION 4.0)
-project(split_loaf C)
+project(split_loaf LANGUAGES C CXX)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 
-add_executable(split_loaf main.c)
+add_executable(split-loaf
+        src/app/main.cpp
+        src/core/Platform.cpp
+        src/win/WinBackend.cpp
+        src/win/WinHooks.cpp
+        src/core/Backend.h
+)
+
+target_include_directories(split-loaf PUBLIC src)
+target_link_libraries(split-loaf user32)
