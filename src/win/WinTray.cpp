@@ -1,6 +1,6 @@
 #include "WinTray.h"
 #include <shellapi.h>
-#include "../res/resource.h"
+#define IDI_APP_ICON 101
 
 NOTIFYICONDATA nid;
 HMENU hMenu = NULL;
@@ -14,12 +14,9 @@ void InitTrayIcon(HWND hwnd) {
     nid.uCallbackMessage = WM_USER + 1;
 
     // Load a custom icon from resource (IDI_MYICON)
-    HICON h = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_APP_ICON));
-    if (!h) {
-        MessageBox(NULL, "Failed to load icon", "Debug", MB_OK);
-    }
+    HICON hIcon = (HICON)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_APP_ICON), IMAGE_ICON,GetSystemMetrics(SM_CYICON),GetSystemMetrics(SM_CXICON),LR_DEFAULTCOLOR);
     strcpy_s(nid.szTip, "Split Loaf - Idle");
-
+    nid.hIcon = hIcon;
     Shell_NotifyIcon(NIM_ADD, &nid);
 
     // Create context menu
