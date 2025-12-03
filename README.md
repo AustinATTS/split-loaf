@@ -60,8 +60,6 @@ Future Improvements
 
 *   Optional visual indicator for lock state.
 
-*   Better error handling and target window validation.
-
 
 Contact
 -------
