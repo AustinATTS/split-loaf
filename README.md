@@ -60,6 +60,10 @@ Future Improvements
 
 *   Optional visual indicator for lock state.
 
+Linux Versions
+-------------
+
+Currently, the version of Split Loaf relies on Windows API for handling the keyboard redirection and so a new method will be needed for accessing keyboard input on linux or other devices to be able to handle them as well as for finding the window ID of what is being used. A possible issue could be in environments like hyprland which bases the active window solely on where the mouse is, instead of having a separate active window and so might be hard to do, but I'll give it a go because why not.
 
 Contact
 -------
