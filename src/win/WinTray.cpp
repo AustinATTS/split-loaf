@@ -21,9 +21,9 @@ void InitTrayIcon(HWND hwnd) {
 
     // Create context menu
     hMenu = CreatePopupMenu();
-    AppendMenu(hMenu, MF_STRING, 1, "Settings");
+    AppendMenu(hMenu, MF_STRING, 1001, "Settings");
     AppendMenu(hMenu, MF_SEPARATOR, 0, NULL);
-    AppendMenu(hMenu, MF_STRING, 2, "Exit");
+    AppendMenu(hMenu, MF_STRING, 1002, "Exit");
 }
 
 void RemoveTrayIcon() {

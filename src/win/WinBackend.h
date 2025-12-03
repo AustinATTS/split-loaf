@@ -13,4 +13,5 @@ namespace WinBackend {
 
     bool processEvents();
     void sendVirtualKey(uint32_t vk);
+    int RunWindowsApp(HINSTANCE hInstance);
 }
