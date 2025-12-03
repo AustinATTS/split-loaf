@@ -10,6 +10,7 @@ add_executable(split-loaf
         src/win/WinHooks.cpp
         src/win/WinTray.cpp
         src/core/Backend.h
+        src/res/resource.rc
 )
 
 target_include_directories(split-loaf PUBLIC src)
