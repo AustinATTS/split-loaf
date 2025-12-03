@@ -1,4 +1,4 @@
-name: Build split_loaf
+name: Windows Build
 
 on:
   push:
