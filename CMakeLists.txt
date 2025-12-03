@@ -8,6 +8,7 @@ add_executable(split-loaf
         src/core/Platform.cpp
         src/win/WinBackend.cpp
         src/win/WinHooks.cpp
+        src/win/WinTray.cpp
         src/core/Backend.h
 )
 
