@@ -1,3 +1,4 @@
+#ifdef _WIN32
 #include "Platform.h"
 #include "../win/WinBackend.h"
 
@@ -28,3 +29,6 @@ namespace Platform {
     }
 
 }
+#else
+
+#endif
