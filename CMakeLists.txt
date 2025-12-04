@@ -26,11 +26,11 @@ else()
     project(split_loaf LANGUAGES C CXX)
 
     add_executable(split-loaf
-            #src/app/main.cpp
-            #src/core/Platform.cpp
-            #src/linux/LinuxBackend.cpp
-            #src/linux/LinuxHooks.cpp
-            #src/core/Backend.h
+            src/app/main.cpp
+            src/core/Platform.cpp
+            src/linux/LinuxBackend.cpp
+            src/linux/LinuxHooks.cpp
+            src/core/Backend.h
             src/linux/linux_test.c
     )
 endif()
