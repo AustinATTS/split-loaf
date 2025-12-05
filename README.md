@@ -1,4 +1,4 @@
-Split Loaf Keyboard Rerouter
+Split Loaf Keyboard Rerouter [Split Loaf[https://raw.githubusercontent.com/AustinATTS/split_loaf/main/assets/splitloaf.png]]
 ============================
 
 **Status:** Somehow working?
