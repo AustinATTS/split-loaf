@@ -18,6 +18,7 @@ if (WIN32)
             src/res/resource.rc
     )
 
+    target_link_options(split-loaf PRIVATE -static -static-libgcc -static-libstdc++)
     target_include_directories(split-loaf PUBLIC src)
     target_link_libraries(split-loaf user32 gdi32 shell32)
     set_target_properties(split-loaf PROPERTIES WIN32_EXECUTABLE TRUE)
