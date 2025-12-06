@@ -32,6 +32,6 @@ else()
             src/linux/LinuxBackend.cpp
             src/linux/LinuxHooks.cpp
             src/core/Backend.h
-            src/linux/linux_test.c
+            src/linux/linux_test.cpp
     )
 endif()
