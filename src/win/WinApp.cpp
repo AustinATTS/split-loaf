@@ -53,15 +53,19 @@ int RunWindowsApp ( ) { // Create the application.
 
     Platform::init(); // Start the main program.
 
-    MSG msg {};
+    MSG msg{};
     while (true) {
-        while (PeekMessage(& msg, NULL, 0, 0, PM_REMOVE)) {
-            TranslateMessage(& msg);
-            DispatchMessage(& msg);
+        DWORD result = MsgWaitForMultipleObjects(0,NULL,FALSE,1,QS_ALLINPUT);
 
-            if (msg.message == WM_QUIT) {
-                Platform::shutdown(); // Exit app if quit.
-                return 0;
+        if (result == WAIT_OBJECT_0) {
+            while (PeekMessage(& msg, NULL, 0, 0, PM_REMOVE)) {
+                TranslateMessage(& msg);
+                DispatchMessage(& msg);
+
+                if (msg.message == WM_QUIT) {
+                    Platform::shutdown();
+                    return 0;
+                }
             }
         }
 
