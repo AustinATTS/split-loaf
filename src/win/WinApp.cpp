@@ -37,7 +37,7 @@ LRESULT CALLBACK WindowProc (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) 
     return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
-int RunWindowsApp() {
+int RunWindowsApp ( ) {
     g_hInstance = GetModuleHandle(NULL);
 
     // Initialize keybinds & settings
@@ -47,7 +47,7 @@ int RunWindowsApp() {
     wc.lpfnWndProc = WindowProc;
     wc.hInstance = g_hInstance;
     wc.lpszClassName = WINDOW_CLASS;
-    RegisterClass(&wc);
+    RegisterClass(& wc);
 
     HWND hwnd = CreateWindowEx(0, WINDOW_CLASS, "Split Loaf", 0, 0, 0, 0, 0, NULL, NULL, g_hInstance, NULL);
 
@@ -59,9 +59,9 @@ int RunWindowsApp() {
         DWORD result = MsgWaitForMultipleObjects(0, NULL, FALSE, 1, QS_ALLINPUT);
 
         if (result == WAIT_OBJECT_0) {
-            while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
-                TranslateMessage(&msg);
-                DispatchMessage(&msg);
+            while (PeekMessage(& msg, NULL, 0, 0, PM_REMOVE)) {
+                TranslateMessage(& msg);
+                DispatchMessage(& msg);
 
                 if (msg.message == WM_QUIT) {
                     Platform::shutdown();

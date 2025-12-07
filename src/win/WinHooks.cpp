@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <string>
 #include <algorithm>
-
 #include "WinSettings.h"
 
 const Keybind targetBind = WinSettings_GetTargetBind();
@@ -47,7 +46,7 @@ bool IsKeybindPressed(const Keybind & bind, KBDLLHOOKSTRUCT * kbd) {
     bool shiftDown = (GetAsyncKeyState(VK_SHIFT) & 0x8000) != 0;
     bool altDown   = (GetAsyncKeyState(VK_MENU) & 0x8000) != 0; // ALT
 
-    return (kbd->vkCode == bind.key) && (ctrlDown  == bind.ctrl) && (shiftDown == bind.shift) && (altDown   == bind.alt);
+    return (kbd -> vkCode == bind.key) && (ctrlDown == bind.ctrl) && (shiftDown == bind.shift) && (altDown == bind.alt);
 }
 
 
@@ -62,7 +61,7 @@ LRESULT CALLBACK LowLevelKeyboardProc (int nCode, WPARAM wParam, LPARAM lParam) 
     auto & locked = WinHooks_GetLockedFlag();
     auto & targetHasFocus = WinHooks_GetTargetFocusFlag();
 
-    KBDLLHOOKSTRUCT * kbd = (KBDLLHOOKSTRUCT *)lParam;
+    KBDLLHOOKSTRUCT * kbd = (KBDLLHOOKSTRUCT *) lParam;
 
     if (kbd -> flags & LLKHF_INJECTED) {
         return CallNextHookEx(NULL, nCode, wParam, lParam);

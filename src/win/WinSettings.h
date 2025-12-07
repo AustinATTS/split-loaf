@@ -14,5 +14,5 @@ const Keybind & WinSettings_GetLockBind ( );
 const Keybind & WinSettings_GetUnlockBind ( );
 
 void OpenSettingsWindow (HINSTANCE hInstance, HWND parent);
-void WinSettings_Init ();
+void WinSettings_Init ( );
 

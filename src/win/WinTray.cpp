@@ -18,7 +18,7 @@ void InitTrayIcon (HWND hwnd) { // Create the system tray icon.
     nid.uCallbackMessage = WM_USER + 1;
 
     // Use load image as the icon one doesn't seem to work.
-    HICON hIcon = (HICON)LoadImage(GetModuleHandle(NULL),MAKEINTRESOURCE(IDI_APP_ICON),IMAGE_ICON,GetSystemMetrics(SM_CXICON),GetSystemMetrics(SM_CYICON),LR_DEFAULTCOLOR);
+    HICON hIcon = (HICON) LoadImage(GetModuleHandle(NULL),MAKEINTRESOURCE(IDI_APP_ICON),IMAGE_ICON,GetSystemMetrics(SM_CXICON),GetSystemMetrics(SM_CYICON),LR_DEFAULTCOLOR);
 
     nid.hIcon = hIcon;
     strncpy_s(nid.szTip, "Split Loaf - Idle", sizeof(nid.szTip));

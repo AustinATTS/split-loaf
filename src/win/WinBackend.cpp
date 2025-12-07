@@ -9,7 +9,6 @@
 #define CMD_SETTINGS 1001
 #define CMD_EXIT 1002
 
-
 static HHOOK keyboardHook = NULL;
 static HWND targetWindow = NULL;
 static bool locked = false;
@@ -29,7 +28,7 @@ bool & WinHooks_GetTargetFocusFlag ( ) {
 }
 
 void WinBackend::init ( ) { // Sets up the keyboard hook.
-    keyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL,LowLevelKeyboardProc,GetModuleHandle(NULL),0);
+    keyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL, LowLevelKeyboardProc,GetModuleHandle(NULL),0);
 }
 
 void WinBackend::shutdown ( ) { // Removes the hook when closed.
@@ -37,7 +36,7 @@ void WinBackend::shutdown ( ) { // Removes the hook when closed.
 }
 
 void WinBackend::setTargetWindow (WindowHandle w) {
-    targetWindow = (HWND)w; // Sets the target window.
+    targetWindow = (HWND) w; // Sets the target window.
 }
 
 void WinBackend::lockInput ( ) {
