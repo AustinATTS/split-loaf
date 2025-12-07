@@ -7,7 +7,8 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
     return RunWindowsApp(); // Call the main start function from WinApp.cpp.
 }
 #else // For other operating systems just return 0 as they haven't been implemented yet.
+extern int linux_main ( );
 int main ( ) {
-    return 0;
+    return linux_main();
 }
 #endif
