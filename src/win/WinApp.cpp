@@ -5,31 +5,30 @@
 #include "WinSettings.h"
 
 static const char * WINDOW_CLASS = "SplitLoafTray";
-static HINSTANCE g_hInstance = NULL; // A handle to the current instance of the application.
+static HINSTANCE g_hInstance = NULL;
 
 LRESULT CALLBACK WindowProc (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
     switch (msg) {
-
         case TRAY_CALLBACK:
             if (lParam == WM_RBUTTONUP) {
-                ShowTrayMenu(hwnd); // Show a menu when right clicked.
+                ShowTrayMenu(hwnd);
             }
             break;
 
         case WM_COMMAND:
             switch (LOWORD(wParam)) {
             case CMD_SETTINGS:
-                    OpenSettingsWindow(g_hInstance, hwnd); // Open settings window when that option is selected.
+                    OpenSettingsWindow(g_hInstance, hwnd);
                     break;
 
             case CMD_EXIT:
-                    PostQuitMessage(0); // Exit the program if the option is selected.
+                    PostQuitMessage(0);
                     break;
             }
             break;
 
         case WM_DESTROY:
-            RemoveTrayIcon(); // Close the app and remove it from the System Tray.
+            RemoveTrayIcon();
             PostQuitMessage(0);
             return 0;
     }
@@ -37,9 +36,9 @@ LRESULT CALLBACK WindowProc (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) 
     return DefWindowProc(hwnd, msg, wParam, lParam);
 }
 
-int RunWindowsApp() {
+int RunWindowsApp ( ) {
     HANDLE hMutex = CreateMutexA(NULL, TRUE, "Global//SplitLoaf");
-    if (!hMutex) {
+    if (! hMutex) {
         MessageBoxA(NULL, "Failed to create mutex.", "Error", MB_OK | MB_ICONERROR);
         return 1;
     }
@@ -47,7 +46,7 @@ int RunWindowsApp() {
     if (GetLastError() == ERROR_ALREADY_EXISTS) {
         MessageBoxA(NULL, "Split Loaf is already running.", "Info", MB_OK | MB_ICONINFORMATION);
         CloseHandle(hMutex);
-        return 0; // exit this duplicate instance
+        return 0;
     }
 
     g_hInstance = GetModuleHandle(NULL);
@@ -62,8 +61,8 @@ int RunWindowsApp() {
 
     HWND hwnd = CreateWindowEx(0, WINDOW_CLASS, "Split Loaf", 0, 0, 0, 0, 0, NULL, NULL, g_hInstance, NULL);
 
-    InitTrayIcon(hwnd); // System Tray icon
-    Platform::init();   // Start main program
+    InitTrayIcon(hwnd);
+    Platform::init();
 
     MSG msg{};
     while (true) {
@@ -82,7 +81,6 @@ int RunWindowsApp() {
                 }
             }
         }
-
         Platform::processEvents();
     }
 }
