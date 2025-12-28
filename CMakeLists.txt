@@ -8,13 +8,16 @@ if (WIN32)
 
     add_executable(split-loaf
             src/app/main.cpp
+
             src/core/Platform.cpp
+            src/core/Backend.h
+
             src/win/WinBackend.cpp
             src/win/WinHooks.cpp
             src/win/WinTray.cpp
             src/win/WinApp.cpp
             src/win/WinSettings.cpp
-            src/core/Backend.h
+
             src/res/resource.rc
     )
 
@@ -28,11 +31,11 @@ else()
 
     add_executable(split-loaf
             src/app/main.cpp
+
             src/core/Platform.cpp
-            src/linux/LinuxBackend.cpp
-            src/linux/LinuxHooks.cpp
             src/core/Backend.h
-            src/linux/linux_test.c
-            src/linux/linux_test.h
+
+            src/linux/LinuxApp.cpp
+            src/linux/LinuxKeyLogger.cpp
     )
 endif()
