@@ -12,7 +12,7 @@
 Overview
 --------
 
-Split Loaf is a Windows utility designed to reroute keyboard input to a specific target window. Once a target window is chosen, the keyboard can be **“locked”** to that window, so all typed keys are sent directly to it regardless of which window is currently focused. This is perfect for scenarios where you want input to always go to a particular application without manually switching focus—for example, browsing the web while typing into a text editor without moving your mouse.
+Split Loaf is a Windows utility designed to reroute keyboard input to a specific target window. Once a target window is chosen, the keyboard can be **“locked”** to that window, so all typed keys are sent directly to it regardless of which window is currently focused. This is perfect for scenarios where you want input to always go to a particular application without manually switching focus. For example, browsing the web while typing into a text editor without moving your mouse.
 
 Version 1.0.0 marks the first full Windows release, with a stable executable, system tray integration, and persistent keybind and startup settings via the Windows Registry.
 
