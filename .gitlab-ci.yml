@@ -10,7 +10,6 @@ windows_build:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
   before_script:
-    - choco install cmake --version=4.0.0 --installargs 'ADD_CMAKE_TO_PATH=System' -y
     - cmake --version
 
   script:
