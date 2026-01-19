@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img src="https://gitlab.com/AustinATTS/split-loaf/-/raw/master/assets/Logo/Split%20Loaf%202160x2160.png?ref_type=heads" width="" height="250" alt="Logo"/></br>
+	<img src="https://gitlab.com/AustinATTS/split-loaf/-/raw/master/assets/Logo/Split%20Loaf%202160x2160.png" width="" height="250" alt="Logo"/></br>
 	Split Loaf - Keyboard Rerouter
 </h1>
 
